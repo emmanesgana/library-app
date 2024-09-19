@@ -14,6 +14,8 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     font-family: 'Inter', sans-serif;
+    width: 720px;
+    margin: auto;
 }
 
 img,
@@ -55,6 +57,11 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-top: 3em;
+}
+
+i {
+    margin-right: 10px;
 }
 
 /* Modal Style */
@@ -70,9 +77,9 @@ h6 {
 }
 
 #modal {
-    display: block;
+    display: none;
     width: 380px;
-    height: 390px;
+    height: 450px;
     padding: 1em 1.5em;
     position: fixed;
     background-color: #FFFFFF;
@@ -126,3 +133,27 @@ input#pages{
 .hide {
     display: none;
 }
+
+/* Button and input style */
+
+.add-book,
+.save-button {
+    background-color: #0C97ED;
+    border: none;
+    padding: 1em 1em;
+    font-size: 1rem;
+    color: #FFFFFF;
+    border-radius: 10px;;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+input {
+    padding: 0.5em 0.5em;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
