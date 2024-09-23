@@ -11,12 +11,13 @@
 }
 
 body {
-    line-height: 1.5;
+    line-height: 1.3;
     -webkit-font-smoothing: antialiased;
     font-family: 'Inter', sans-serif;
-    width: 720px;
     margin: auto;
 }
+
+
 
 img,
 picture,
@@ -57,11 +58,53 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 3em;
+    padding: 1.5em 0;
 }
 
 i {
     margin-right: 10px;
+}
+
+/* Main Style */
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 3em;
+}
+
+.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5em;
+}
+
+.book {
+    padding: 1.5em;
+    width: 280px;
+    min-height: 200px;
+    height: auto;
+    background-color: rgb(255, 245, 190);
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2); 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.book:hover {
+    transition: transform 125ms;
+    transform: translateY(-10px);
+}
+
+.book-title {
+    word-wrap: break-word;
+    margin-bottom: .65em;
+    text-align: center;
 }
 
 /* Modal Style */
@@ -79,8 +122,8 @@ i {
 #modal {
     display: none;
     width: 380px;
-    height: 450px;
-    padding: 1em 1.5em;
+    height: 425px;
+    padding: 1em 1.75em;
     position: fixed;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -89,18 +132,24 @@ i {
     left: 0;
     right: 0;
     margin: auto;
-    /* box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2); */
 }
 
 .modal-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1em;
 }
 
 .modal-close {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    font-size: .75rem;
+}
+
+.modal-close:hover {
+    color: red;
+    font-weight: 700;
 }
 
 #add-form {
@@ -136,11 +185,30 @@ input#pages{
 
 /* Button and input style */
 
+.book-button{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 .add-book,
-.save-button {
+.save-button,
+.read-button {
     background-color: #0C97ED;
     border: none;
-    padding: 1em 1em;
+    padding: 0.75em 1em;
+    font-size: 1rem;
+    color: #FFFFFF;
+    border-radius: 10px;;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.remove-button {
+    background-color: #ec1010;
+    border: none;
+    padding: 0.75em 1em;
     font-size: 1rem;
     color: #FFFFFF;
     border-radius: 10px;;
@@ -156,4 +224,3 @@ input {
 input:focus {
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
 }
-
