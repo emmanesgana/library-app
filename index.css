@@ -195,7 +195,7 @@ input#pages{
 .add-book,
 .save-button,
 .read-button {
-    background-color: #0C97ED;
+    background-color: #34abf5;
     border: none;
     padding: 0.75em 1em;
     font-size: 1rem;
@@ -206,7 +206,7 @@ input#pages{
 }
 
 .remove-button {
-    background-color: #ee2f2f;
+    background-color: #f13b3b;
     border: none;
     padding: 0.75em 1em;
     font-size: 1rem;
