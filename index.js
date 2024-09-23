@@ -20,7 +20,6 @@ let data = [
         pages: 176,
         hasRead: true
     }
-
 ]
 
 let title = "";
@@ -28,21 +27,21 @@ let author = "";
 let pages = 0;
 let read = false;
 
+const root = document.getElementById("root");
 const modal = document.getElementById("modal");
 const modalBg = document.getElementById("modal-bg")
 const form = document.getElementById("add-form")
-const root = document.getElementById("root");
 const addBookButton = document.getElementById("add-book");
 const saveBookButton = document.getElementById("save-button")
 const closeModalButton = document.getElementById("modal-close");
 const bookTitle = document.getElementById("title");
 const bookAuthor = document.getElementById("author");
 const bookPages = document.getElementById("pages");
-const bookRead = document.getElementById("read");
+const bookStatus = document.getElementById("read");
 
 document.body.addEventListener("click", e => {
     deleteBook(e);
-    toggleRead(e);
+    toggleStatus(e);
 });
 
 form.addEventListener("submit", e => {
@@ -50,8 +49,8 @@ form.addEventListener("submit", e => {
     const title = bookTitle.value;
     const author = bookAuthor.value;
     const pages = bookPages.value;
-    const hasRead = bookRead.checked;
-    saveBook({ title, author, pages, hasRead });
+    const hasRead = bookStatus.checked;
+    addBook({ title, author, pages, hasRead });
     modal.style.display = "none";
     modalBg.style.display = "none";
 })
@@ -67,7 +66,7 @@ closeModalButton.addEventListener("click", () => {
     modalBg.style.display = "none";
 });
 
-function saveBook({ title, author, pages, hasRead }) {
+function addBook({ title, author, pages, hasRead }) {
     const newBook = {
         title,
         author,
@@ -76,7 +75,7 @@ function saveBook({ title, author, pages, hasRead }) {
         id: data.length > 0 ? data[data.length - 1].id + 1 : 1
     }
     data = [...data, newBook];
-    renderBooks();
+    renderBook();
 }
 
 function deleteBook(e) {
@@ -84,10 +83,10 @@ function deleteBook(e) {
     if (!e.target.matches(".remove-button")) return;
     const id = e.target.dataset.id;
     data = data.filter(book => book.id !== Number(id));
-    renderBooks();
+    renderBook();
 }
 
-function toggleRead(e) {
+function toggleStatus(e) {
     e.stopPropagation();
     if (!e.target.matches(".read-button")) return;
     const id = e.target.dataset.id;
@@ -97,11 +96,10 @@ function toggleRead(e) {
             hasRead: !book.hasRead
         } : book
     );
-    console.log(data)
-    renderBooks();
+    renderBook();
 }
 
-function renderBooks() {
+function renderBook() {
     if (data.length === 0) return root.innerHTML = `<h3 class="empty">Looking a bit empty here...</h3>`;
 
     root.innerHTML = data.map(({ title, author, pages, hasRead, id }) => {
@@ -120,4 +118,4 @@ function renderBooks() {
     }).join("");
 }
 
-renderBooks()
+renderBook()
