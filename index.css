@@ -15,6 +15,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Inter', sans-serif;
     margin: auto;
+    background-color: #f9f9fa;
 }
 
 
@@ -88,7 +89,7 @@ i {
     width: 280px;
     min-height: 200px;
     height: auto;
-    background-color: rgb(255, 246, 198);
+    background-color: #faeecd;
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2); 
     border-radius: 10px;
     display: flex;
