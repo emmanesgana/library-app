@@ -22,11 +22,6 @@ let data = [
     }
 ]
 
-let title = "";
-let author = "";
-let pages = 0;
-let read = false;
-
 const root = document.getElementById("root");
 const modal = document.getElementById("modal");
 const modalBg = document.getElementById("modal-bg")
