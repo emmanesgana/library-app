@@ -22,6 +22,7 @@ let data = [
     }
 ]
 
+
 const root = document.getElementById("root");
 const modal = document.getElementById("modal");
 const modalBg = document.getElementById("modal-bg")
